@@ -19,6 +19,10 @@ describe('Cadastro de produto', () => {
     cy.xpath('//*[@id="produtoForm"]/button').click();
 
     //ASSERT -> Etapa para verificar os resultados do teste
+    cy.xpath('//*[@id="mensagem"]').should('contain.text', 'Produto cadastrado com sucesso!');
+
+    //EVIDÊNCIA DO TESTE
+    cy.screenshot('Deve cadastrar produto com sucesso', { overwrite : true });
 
   })
 
